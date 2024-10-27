@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mapmate/models/place.dart';
 import 'package:mapmate/screens/add_place.dart';
+import 'package:mapmate/screens/place_detail.dart';
 
 class PlacesList extends StatelessWidget {
   const PlacesList({super.key, required this.places});
@@ -40,6 +41,13 @@ class PlacesList extends StatelessWidget {
     return ListView.builder(
       itemCount: places.length,
       itemBuilder: (context, index) => ListTile(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (ctx) => PlaceDetailScreen(place: places[index]),
+            ),
+          );
+        },
         title: Text(
           places[index].title,
           style: Theme.of(context)
