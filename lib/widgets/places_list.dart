@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mapmate/models/place.dart';
+import 'package:mapmate/screens/add_place.dart';
 
 class PlacesList extends StatelessWidget {
   const PlacesList({super.key, required this.places});
@@ -14,12 +15,17 @@ class PlacesList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AddPlaceScreen(),
+                  ),
+                );
+              },
               icon: const Icon(Icons.add_circle_outline_outlined),
               iconSize: 50,
               color: Theme.of(context).colorScheme.onSurface,
             ),
-            
             Text(
               'Add favorite places',
               style: Theme.of(context)
