@@ -22,7 +22,7 @@ class PlacesList extends StatelessWidget {
                   ),
                 );
               },
-              icon: const Icon(Icons.add_circle_outline_outlined),
+              icon: const Icon(Icons.add_location_alt_outlined),
               iconSize: 50,
               color: Theme.of(context).colorScheme.onSurface,
             ),

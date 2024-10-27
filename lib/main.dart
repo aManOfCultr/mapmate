@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mapmate/screens/places.dart';
 import 'package:mapmate/theme/theme.dart';
@@ -25,7 +26,7 @@ final darkTheme = MaterialTheme(textTheme).dark();
 
 void main() {
   runApp(
-    const MyApp(),
+    const ProviderScope(child: MyApp()),
   );
 }
 
