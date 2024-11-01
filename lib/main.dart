@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mapmate/screens/places.dart';
 import 'package:mapmate/theme/theme.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.light,
@@ -24,7 +25,8 @@ TextTheme textTheme = GoogleFonts.ubuntuCondensedTextTheme().copyWith(
 final theme = MaterialTheme(textTheme).light();
 final darkTheme = MaterialTheme(textTheme).dark();
 
-void main() {
+void main() async{
+  await dotenv.load();
   runApp(
     const ProviderScope(child: MyApp()),
   );
