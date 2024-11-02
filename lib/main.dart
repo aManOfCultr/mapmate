@@ -25,8 +25,8 @@ TextTheme textTheme = GoogleFonts.ubuntuCondensedTextTheme().copyWith(
 final theme = MaterialTheme(textTheme).light();
 final darkTheme = MaterialTheme(textTheme).dark();
 
-void main() async{
-  await dotenv.load();
+void main() async {
+  await dotenv.load(fileName: "key.env");
   runApp(
     const ProviderScope(child: MyApp()),
   );
